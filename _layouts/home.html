@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <!-- <h1 class="page-heading">Post Series #1:Creating a Cesium Terrain Tiler using Mapinfo Raster API</h1> -->
+  
+  {{ content }}
+ <a href="{% post_url 2017-03-28-MRRTileGen %}"> <img src="{{ site.url }}/images/SeriesHeader.png" alt="Series Header"/></a>
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <h2>
+          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        </h2>
+		<span class="post-meta">{{ post.content | strip_html | truncatewords: 40 }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+  <img src="{{ site.url }}/images/SeriesFooter.png" alt="Series Footer"/>
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+
+</div>
